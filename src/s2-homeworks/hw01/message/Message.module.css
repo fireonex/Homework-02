@@ -1,0 +1,79 @@
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Оттолкнёт время к правому краю */
+    margin: 25px 70px 25px 635px; /* Отступ от краёв страницы */
+    padding: 10px; /* Внутренний отступ для всего сообщения */
+}
+
+.imageAndText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
+
+.imageAndText img {
+    width: 48px;
+    height: 48px;
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
+
+.text {
+    box-shadow: 0 1px 2px 0 rgba(29, 33, 38, 0.1),0 5px 20px 0 rgba(29, 33, 38, 0.03);
+    background: rgb(0, 102, 204);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    max-width: calc(100% - 60px); /* Максимальная ширина с учётом времени и отступов */
+    padding-right: 20px;
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
+
+.text:after {
+
+}
+
+.name {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat, serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: right;
+
+    margin-bottom: 5px;
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
+
+.messageText {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    white-space: pre-wrap;
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
+
+.time {
+    width: 26px;
+    height: 12px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0;
+    text-align: left;
+
+    align-self: flex-end; /* Время будет в нижнем правом углу */
+    padding: 5px;
+
+    margin-left: auto; /* Отодвигает время к правому краю */
+}
