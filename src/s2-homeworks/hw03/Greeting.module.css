@@ -1,35 +1,92 @@
 .greetingForm {
+    margin-top: 40px;
+    height: 372px;
 }
 
 .inputAndButtonContainer {
+    margin: 8px auto 8px 70px;
+    display: flex;
 }
 
 .error {
+    color: #CC0000;
 }
 
 .input {
+    /* Component 2 */
+    width: 372px;
+    height: 90px;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    border-radius: 3px;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    border: 2px solid #CC0000;
+    border-radius: 3px;
 }
 
 .button {
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px 5px 24px;
+    margin-left: 12px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    background: rgb(0, 102, 204);
 }
 
 .button:focus {
+    background: rgb(0, 102, 204);
 }
 
 .button:active {
+    background: rgb(0, 102, 204);
 }
 
 .button:disabled {
+    background: rgb(0, 102, 204);
+    opacity: 0.5;
 }
 
 .text {
+    /* Людей добавили: 0 */
+    width: 143px;
+    height: 18px;
+
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: left;
+
+    margin-left: 70px;
 }
 
 .greeting {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: left;
+
+    margin-left: 70px;
 }
