@@ -1,36 +1,72 @@
 .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px 5px 24px;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    border: none;
 }
 
 .disabled {
+    border-radius: 3px;
+    background: rgb(0, 77, 153);
+    opacity: 0.5;
 }
 
 .secondary {
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 102, 204);
+    border-radius: 3px;
+
+    color: rgb(0, 102, 204);
 }
 
 .default {
+    border-radius: 3px;
+    background: rgb(0, 102, 204);
 }
 
 .red {
+    border-radius: 3px;
+    background: rgb(204, 20, 57);
 }
 
 .default:hover {
+    background: rgb(0, 128, 255);
 }
 
 .red:hover {
+    background: rgb(255, 26, 71);
 }
 
 .secondary:hover {
+    background: rgb(229, 240, 250);
 }
 
 
 .default:active {
+    background: rgb(229, 240, 250);
 }
 
 .secondary:active {
+    background: rgb(201, 229, 255);
 }
 
 .red:active {
+    background: rgb(179, 18, 50);
 }
 
 .button:disabled {
+    border-radius: 3px;
+    background: rgb(0, 77, 153);
+    opacity: 0.5;
+    color: rgb(0, 46, 92);
 }
