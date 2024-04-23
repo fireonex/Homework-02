@@ -1,15 +1,20 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
+
 
 type PropsType = {
     open: boolean
     handleClose: () => void
 }
 
+
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
+
+    const location = useLocation();
+
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
     return (
@@ -17,7 +22,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
             {/*затемнение справа от открытого меню*/}
             {open && <div className={s.background} onClick={handleClose}/>}
 
-            <aside className={sidebarClass}>
+            <aside className={`${s.sidebar} ${open ? s.open : ''}`}>
                 <button className={s.close} onClick={handleClose}>
                     <img
                         src={closeIcon}
@@ -31,7 +36,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        className={location.pathname === PATH.PRE_JUNIOR ? `${s.link} ${s.active}` : s.link} // делает студент
                     >
                         Pre-junior
                     </NavLink>
@@ -39,7 +44,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        className={location.pathname === PATH.JUNIOR ? `${s.link} ${s.active}` : s.link} // делает студент
                     >
                         Junior
                     </NavLink>
@@ -47,7 +52,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        className={location.pathname === PATH.JUNIOR_PLUS ? `${s.link} ${s.active}` : s.link} // делает студент
                     >
                         Junior Plus
                     </NavLink>

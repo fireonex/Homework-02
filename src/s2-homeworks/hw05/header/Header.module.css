@@ -1,8 +1,32 @@
 .burgerMenuIcon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute; /* Если нужно позиционировать иконку */
+    top: 15px;
+    left: 20px;
+    /*z-index: 100;*/
+    display: block;
 }
 
 .header {
+    box-shadow: 0 0 2px 0 rgba(29, 33, 38, 0.1), 0 0 40px 0 rgba(29, 33, 38, 0.13);
+    background: rgb(255, 255, 255);
+    height: 60px;
+    margin: 0;
+
+    display: flex;
+    justify-content: flex-end;
+
+    align-items: center;
+    position: relative; /* Чтобы иконка позиционировалась относительно header */
 }
 
 .header h1 {
+    text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    /*margin: -15px 70px;*/
+
+    margin-right: 70px;
 }
