@@ -6,6 +6,7 @@ import React, {
 } from 'react'
 import s from './SuperRadio.module.css'
 
+
 type DefaultRadioPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -19,7 +20,6 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
     options?: any[]
     onChangeOption?: (option: any) => void
-
     spanProps?: DefaultSpanPropsType // пропсы для спана
 }
 
@@ -36,6 +36,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // делают студенты
+        if (onChangeOption) {
+            onChangeOption(e.currentTarget.value)
+        }
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
@@ -49,7 +52,16 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       className={finalRadioClassName}
                       type={'radio'}
                       // name, checked, value делают студенты
+                      name={name}//Атрибут name используется для группировки радио-кнопок.
+                                // Все радио-кнопки в одной группе должны иметь одинаковое значение name
 
+                      checked={o.id === Number(value)} //Так как вы передаёте value в SuperRadio и это значение сравнивается
+                                               // с каждым o.id, вы должны использовать это сравнение
+
+                      value={o.id} //Атрибут value радио-кнопки определяет значение,
+                                    // которое будет отправлено на сервер или обработано
+                                    //при изменении состояния. Значение каждой кнопки должно быть уникальным
+                                    // и обычно соответствует какому-то идентификатору.
                       onChange={onChangeCallback}
                       {...restProps}
                   />

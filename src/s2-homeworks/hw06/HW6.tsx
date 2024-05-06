@@ -7,7 +7,7 @@ import s from './HW6.module.css'
 
 /*
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций onEnterCallback, onBlurCallback, onDoubleClickCallBack (made)
- * 2 - дописать логику функции restore
+ * 2 - дописать логику функции restore (made)
  * 3 - сделать стили в соответствии с дизайном (made)
  */
 
