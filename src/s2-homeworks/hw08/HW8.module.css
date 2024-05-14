@@ -1,23 +1,61 @@
-.item {
-}
-
-.item:last-of-type {
-}
-
-.users {
+.container {
+    width: 600px;
+    margin-left: 70px;
 }
 
 .buttonsContainer {
+    justify-content: flex-end;
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.container {
+.users {
+    border-collapse: collapse;
+    width: 100%; /* Чтобы таблица занимала весь контейнер */
 }
 
-.thead {
+/* Стилизация шапки таблицы с помощью более специфичного селектора */
+.thead tr {
+    background: #E5E5E5; /* Светло-серый фон */
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 2px solid #cccccc; /* Сделать границу под шапкой более заметной */
+}
+
+.users th {
+    padding: 8px;
+    text-align: left; /* Выравнивание текста заголовков влево */
+}
+
+.users td {
+    padding: 8px;
+    border-bottom: 1px solid #E5E5E5; /* Горизонтальные линии между строками */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрирование содержимого по вертикали */
+    color: rgb(0, 0, 0);
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 0;
 }
 
 .nameCol {
+    text-align: left; /* Выравнивание текста в столбце 'Name' */
+    flex: 1; /* Гарантирует, что столбец займет все доступное пространство */
 }
 
 .ageCol {
+    text-align: right; /* Выравнивание текста в столбце 'Age' */
+    width: 100px; /* Фиксированная ширина для колонки 'Age' */
+}
+
+/* Удаление границы под последней строкой */
+.users tr:last-child td {
+    border-bottom: none;
 }
