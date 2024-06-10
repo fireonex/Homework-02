@@ -38,6 +38,9 @@ function HW11() {
                             // сделать так чтоб value1 изменялось // пишет студент
                             onChange={change}
                             value={value1}
+                            style={{
+                                width: '200px'
+                            }}
                         />
                     </div>
                     <div className={s.wrapper}>
@@ -47,8 +50,13 @@ function HW11() {
                             // сделать так чтоб value1/2 изменялось // пишет студент
                             onChange={change}
                             value={[value1, value2]}
+                            style={{
+                                width: '200px'
+                            }}
                         />
-                        <span id={'hw11-value-2'} className={s.number}>{value2}</span>
+                        <span id={'hw11-value-2'} className={s.number}  style={{
+                           marginLeft: '20px'
+                        }}>{value2}</span>
                     </div>
                 </div>
             </div>

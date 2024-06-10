@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-    width: 280px;
+
     display: flex;
     gap: 10px;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 
 .number {
-    color: rgb(0, 0, 0);
+
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -19,3 +19,6 @@
     letter-spacing: 0;
     text-align: left;
 }
+
+
+

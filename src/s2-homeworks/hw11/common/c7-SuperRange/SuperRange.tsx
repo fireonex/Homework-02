@@ -5,26 +5,24 @@ const SuperRange: React.FC<SliderProps> = (props) => {
     return (
         <Slider
             sx={{ // стили для слайдера // пишет студент
-                // Основная полоса слайдера
+                width: '100%', // Делаем слайдер полной ширины родителя
                 '& .MuiSlider-track': {
-                    color: 'green', // зеленая полоска
+                    color: 'green', // зелёная полоска
                 },
-                // Полоса до ползунка
                 '& .MuiSlider-rail': {
-                    color: 'gray', // серая полоска
+                    color: 'lightgray', // светло-серая полоска
                 },
-                // Ползунок (кружок)
                 '& .MuiSlider-thumb': {
                     borderRadius: '50%', // круглые ползунки
-                    border: '2px solid green', // зеленая окантовка
+                    border: '2px solid green', // зелёная окантовка
                     width: '24px', // размер ползунка
                     height: '24px', // размер ползунка
                     backgroundColor: '#fff', // белый цвет внутри
                     '&:hover': {
-                        boxShadow: '0px 0px 0px 8px rgba(0, 255, 0, 0.16)', // зеленое свечение при наведении
+                        boxShadow: '0px 0px 0px 8px rgba(0, 255, 0, 0.16)', // зелёное свечение при наведении
                     },
                     '&.Mui-active': {
-                        boxShadow: '0px 0px 0px 14px rgba(0, 255, 0, 0.16)', // зеленое свечение при активации
+                        boxShadow: '0px 0px 0px 14px rgba(0, 255, 0, 0.16)', // зелёное свечение при активации
                     }
                 },
             }}
