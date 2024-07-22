@@ -45,11 +45,15 @@ const HW14 = () => {
     }
 
     const onChangeText = (value: string) => {
+        // setFind(value);
+        // // делает студент
+        // // добавить/заменить значение в квери урла
+        // setSearchParams({find: value});
+        // sendQuery(value);
         setFind(value);
-        // делает студент
-        // добавить/заменить значение в квери урла
-        setSearchParams({find: value});
-        sendQuery(value);
+        // добавляем/заменяем значение в параметрах URL
+        setSearchParams({ find: value });
+        // вызов sendQuery убираем отсюда, он должен быть только в onDebouncedChange
     }
 
     useEffect(() => {
