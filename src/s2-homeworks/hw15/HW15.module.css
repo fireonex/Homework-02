@@ -23,5 +23,19 @@
 }
 
 .loading {
+    position: absolute; /* Абсолютное позиционирование для размещения поверх таблицы */
+    top: 92%; /* Центрирование по вертикали */
+    left: 40%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование элемента */
+    width: 50px; /* Ширина крутилки */
+    height: 50px; /* Высота крутилки */
+    border: 8px solid rgba(0, 102, 204, 0.2); /* Полупрозрачный ободок */
+    border-top: 8px solid rgb(0, 102, 204); /* Цветная верхняя часть */
+    border-radius: 50%; /* Округлость для создания крутилки */
+    animation: spin 1s linear infinite; /* Анимация крутилки */
+}
 
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
