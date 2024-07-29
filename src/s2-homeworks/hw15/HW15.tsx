@@ -52,43 +52,74 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                if (res && res.data) {
+                    setTechs(res.data.techs);
+                    setTotalCount(res.data.totalCount)
+                    setLoading(false)
+                }
                 // сохранить пришедшие данные
-
-                //
+                // Нужно убедиться, что ты передаешь правильные параметры в функцию getTechs.
+                // Параметры должны включать текущие значения page, count и sort.
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
-
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        setPage(newPage)
+        setCount(newCount)
+        const params = { sort: sort, page: newPage.toString(), count: newCount.toString() }
+        sendQuery(params)
+        setSearchParams(params)
     }
 
     const onChangeSort = (newSort: string) => {
-        // делает студент
-
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        setSort(newSort)
+        setPage(1)
+        const params = { sort: newSort, page: '1', count: count.toString() }
+        sendQuery(params)
+        setSearchParams(params)
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
-    }, [])
+        const currentParams = {
+            page: params.page ? +params.page : 1,
+            count: params.count ? +params.count : 4,
+            sort: params.sort || '',
+        }
+        setPage(currentParams.page)
+        setCount(currentParams.count)
+        setSort(currentParams.sort)
+        sendQuery(currentParams)
+    }, [searchParams])
+
+    // const onChangePagination = (newPage: number, newCount: number) => {
+    //     // делает студент
+    //     setPage(newPage)
+    //     setCount(newCount)
+    //     const params = {sort: sort, page: newPage.toString(), count: newCount.toString()}
+    //     sendQuery(params)
+    //     setSearchParams(params)
+    //     //В sendQuery тебе нужно передать объект с параметрами page, count и sort.
+    //     // В setSearchParams нужно передать объект с параметрами, чтобы они корректно отобразились в URL.
+    //
+    // }
+    //
+    // const onChangeSort = (newSort: string) => {
+    //     // делает студент
+    //     setSort(newSort)
+    //     setPage(1)
+    //     // при сортировке сбрасывать на 1 страницу
+    //     const params = {sort: newSort.toString(), page: '1', count: count.toString()}
+    //     sendQuery(params)
+    //     setSearchParams(params)
+    // }
+    //
+    // useEffect(() => {
+    //     const params = Object.fromEntries(searchParams)
+    //     sendQuery({page: params.page, count: params.count})
+    //     setPage(+params.page || 1)
+    //     setCount(+params.count || 4)
+    // }, [])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
